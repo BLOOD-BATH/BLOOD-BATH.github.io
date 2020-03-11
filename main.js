@@ -14,6 +14,7 @@ function highlightDocument() {
     .value.replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/\n$/g, "\n\n")
+    .replace(/:\/\//g, "&#58;&#47;&#47;") //would be better to exclude anything in quotes
     .replace(/\\\/\//g, "&#92;&#47;&#47;")
     .replace(/\/\/.*|\/\*([\s\S]*?)\*\//g, "<mark>$&</mark>");
   //TODO check for other injection methods
